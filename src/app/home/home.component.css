@@ -1,0 +1,26 @@
+.home-container {
+    display: flex;
+    flex-direction: row; 
+}
+.card-container {
+    margin: 40px;
+    width: 40%;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1 {
+    margin: 40px 0px 0px 40px;
+}
+
+.btn {
+    width: 40%;
+}

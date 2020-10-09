@@ -1,0 +1,55 @@
+<h1>Risk Auto-Roller Battle Simulator</h1>
+<div class="home-container">
+    
+    <mat-card class="card-container">
+        
+        <div class='flex-container'>
+            <div class="row">
+                <p>Attacker Troop Count:</p>
+                <input type="number" [formControl]="attackerTroopCount">
+            </div>
+            
+            <div *ngIf="attackerTroopCount.invalid && (attackerTroopCount.dirty || attackerTroopCount.touched)"
+                class="alert alert-danger">
+
+                <div *ngIf="attackerTroopCount.errors.required">
+                    Troop count is required.
+                </div>
+                <div *ngIf="attackerTroopCount.errors.pattern">
+                    Troop count must be an integer.
+                </div>
+            </div>
+
+
+            <div class="row">
+                <p>Defender Troop Count:</p>
+                <input type="number" [formControl]="defenderTroopCount">
+            </div>
+            
+            <div *ngIf="defenderTroopCount.invalid && (defenderTroopCount.dirty || defenderTroopCount.touched)"
+                class="alert alert-danger">
+
+                <div *ngIf="defenderTroopCount.errors.required">
+                    Troop count is required.
+                </div>
+                <div *ngIf="defenderTroopCount.errors.pattern">
+                    Troop count must be an integer.
+                </div>
+            </div>
+
+
+            <button mat-raised-button color="primary" class="btn" [disabled]="(attackerTroopCount.invalid || defenderTroopCount.invalid)" (click)="rollDice()">BATTLE</button>
+            
+
+            <div class="row">
+                <p>Winner:</p>
+                <input type="text" [formControl]="winner">
+            </div>
+        </div>
+    </mat-card>
+    <mat-card class="card-container">
+        <div>
+            Remaining troops: TODO: input state interpolation for victor and remaining troops
+        </div>
+    </mat-card>
+</div>
