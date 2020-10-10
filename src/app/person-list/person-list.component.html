@@ -1,0 +1,49 @@
+<h1 class="text">Alpha Centauri Selection Board</h1>
+<div class="root">
+    <mat-card class="card-container">
+        <mat-card-title class="text">
+            First Colonist Company Candidates
+        </mat-card-title>
+        <ng-container *ngIf="(people$ | async) as p">
+            <div class="container">
+                <div class="column" >
+                    <mat-card-subtitle class="text">Male</mat-card-subtitle>
+                    <button (click)="onClick(man)"
+                            mat-raised-button 
+                            color="primary"
+                            *ngFor="let man of p.men">
+                        {{ man.name.first }}
+                        {{ man.name.last }}
+                    </button>
+                </div>
+                <div class="column" >
+                    <mat-card-subtitle class="text">Female</mat-card-subtitle>
+                    <button (click)="onClick(woman)"
+                            mat-raised-button 
+                            color="primary" 
+                            *ngFor="let woman of p.women">
+                        {{ woman.name.first }}
+                        {{ woman.name.last }}
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+    </mat-card>
+    <mat-card class="card-container">
+        <mat-card-title class="text">
+            Selected First Company Colonists
+        </mat-card-title>
+        <ng-container *ngIf="selectedPeople">
+            <div class="container">
+                <div class="column" >
+                    <div *ngFor="let person of selectedPeople">
+                        {{ person.name.first }}
+                        {{ person.name.last }}
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </mat-card>
+</div>
+
+

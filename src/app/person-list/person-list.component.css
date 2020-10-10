@@ -1,0 +1,29 @@
+:host {
+    width: 100%;
+}
+
+
+.text { 
+    color: #fff;
+    text-align: center;
+}
+
+.root {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-container {
+    background-color: #2f409e;
+    margin: 0px 50px 0px 50px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
